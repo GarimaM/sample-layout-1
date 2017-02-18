@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice page 1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+			font-family: helvetica;
+		}
+		.container{
+			width: 95%;
+			margin: auto;
+		}
+		header{
+			background-color: black;
+			color: white;
+			padding: 20px;
+			margin-bottom: 20px;
+		}
+		header .main_heading{
+			text-align: center;
+			float: left;
+			margin: 20px 20px 20px 0px;
+		}
+		.page_nav ul{
+			list-style: none;
+			margin-top: 12px;
+		}
+		.page_nav a{
+			display: block;
+			color: white;
+			text-decoration: none;
+			text-align: center;
+			line-height: 40px;
+			font-size: 20px;
+			font-family: verdana;
+			box-shadow: 2px 2px 2px 2px grey;
+			border-radius: 8px;
+		}
+		nav a:hover{
+			box-shadow: 1px 1px 1px 1px #C2C1C1;
+			text-decoration: underline;
+		}
+		header:after{
+			content: "";
+			display: table;
+			clear: both;
+		}
+		section .container{
+			width:80%;
+			float: right;
+			padding: 5px;
+			background-color: darkcyan;
+			margin-bottom:20px;
+		}
+		section .parent{
+			padding: 5px;
+			float: left;
+		}
+		section .content{
+			width: 100%;
+			background-color: white;
+			padding: 10px;
+		}
+		section img{
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		aside{
+			float: left;
+			width: 20%;
+			height: 550px;
+			overflow: auto;
+			padding: 5px;
+			margin-right: 20px;
+			box-shadow: 1px 1px 1px 1px black;
+		}
+		aside h1{
+			background-color: #D4CBCB;
+			padding: 10px;
+			font-family: verdana;
+			font-size: 23px;
+			box-shadow: 1px 1px 1px 1px black;
+			margin-bottom: 20px;
+		}
+		aside ul{
+			list-style-position: inside;
+		}
+		.page_footer{
+			clear: both;
+			background-color: black;
+			color: white;
+			text-align: center;
+			padding: 10px;
+		}
+		.page_footer a{
+			color: white;
+		}
+		@media (min-width: 320px) {
+		    .col-s-1 {width: 8.33%;}
+		    .col-s-2 {width: 16.66%;}
+		    .col-s-3 {width: 25%;}
+		    .col-s-4 {width: 33.33%;}
+		    .col-s-5 {width: 41.66%;}
+		    .col-s-6 {width: 50%;}
+		    .col-s-7 {width: 58.33%;}
+		    .col-s-8 {width: 66.66%;}
+		    .col-s-9 {width: 75%;}
+		    .col-s-10 {width: 83.33%;}
+		    .col-s-11 {width: 91.66%;}
+		    .col-s-12 {width: 100%;}
+		    header .main_heading{
+		    	float: none;
+		    }
+		    .page_nav{
+		    	width: 80%;
+		    	margin: auto;
+		    	float: none;
+		    }
+		    .page_nav li{
+		    	width: 100%;
+		    }
+		    section .container{
+			width:100%;
+		}
+		}
+		@media(min-width: 600px) {
+		    .col-m-1 {width: 8.33%;}
+		    .col-m-2 {width: 16.66%;}
+		    .col-m-3 {width: 25%;}
+		    .col-m-4 {width: 33.33%;}
+		    .col-m-5 {width: 41.66%;}
+		    .col-m-6 {width: 50%;}
+		    .col-m-7 {width: 58.33%;}
+		    .col-m-8 {width: 66.66%;}
+		    .col-m-9 {width: 75%;}
+		    .col-m-10 {width: 83.33%;}
+		    .col-m-11 {width: 91.66%;}
+		    .col-m-12 {width: 100%;}
+		    .page_nav ul{
+		    	text-align: center;
+		    }
+		    .page_nav{
+		    	width: 95%;
+		    	margin: auto;
+		    	padding: 5px;
+		    }
+		    .page_nav li{
+		    	display: inline-block;
+		    	width: 100px;
+		    	margin-right: 10px;
+		    	margin-left: 10px;
+		    }
+		    .page_nav:after{
+		    	display: table;
+		    	content: "";
+		    	clear: both;
+		    }
+		    aside{
+		    	float: none;
+		    	margin-bottom: 10px;
+		    }
+		   }
+		 @media(min-width: 768px) {
+		    .col-l-1 {width: 8.33%;}
+		    .col-l-2 {width: 16.66%;}
+		    .col-l-3 {width: 25%;}
+		    .col-l-4 {width: 33.33%;}
+		    .col-l-5 {width: 41.66%;}
+		    .col-l-6 {width: 50%;}
+		    .col-l-7 {width: 58.33%;}
+		    .col-l-8 {width: 66.66%;}
+		    .col-l-9 {width: 75%;}
+		    .col-l-10 {width: 83.33%;}
+		    .col-l-11 {width: 91.66%;}
+		    .col-l-12 {width: 100%;}
+		}
+		@media(min-width: 1024px) {
+		    .col-1 {width: 8.33%;}
+		    .col-2 {width: 16.66%;}
+		    .col-3 {width: 25%;}
+		    .col-4 {width: 33.33%;}
+		    .col-5 {width: 41.66%;}
+		    .col-6 {width: 50%;}
+		    .col-7 {width: 58.33%;}
+		    .col-8 {width: 66.66%;}
+		    .col-9 {width: 75%;}
+		    .col-10 {width: 83.33%;}
+		    .col-11 {width: 91.66%;}
+		    .col-12 {width: 100%;}
+		    header .main_heading{
+		    	float: left;
+		    	text-align: center;
+		    	width: 30%;
+
+		    }
+		    .page_nav li{
+		    	width: 120px;
+		    }
+		   section .container{
+			width:80%;
+			}
+			.page_nav{
+		    	width: 65%;
+		    	padding-left: 0px;
+		    	margin: auto;
+		    	float: right;
+
+		    }
+
+	</style>
+</head>
+<body>
+<div class="container">
+	<header class="page_header">
+		<h1 class="main_heading  col-s-12 col-3 col-m-12">The Heading</h1>
+		<nav class="page_nav">
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Services</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		
+		<article class="container col-10 col-m-12">
+			<div class="parent col-s-12 col-4 col-m-6 col-l-4">
+					<div class="content">
+						<img src="food1.jpg" alt="food_pic">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>						
+					</div>					
+				</div>
+				<div class="parent col-s-12 col-4  col-m-6 col-l-4">
+					<div class="content">
+						<img src="food2.jpg" alt="food_pic">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>						
+					</div>					
+				</div>
+				<div class="parent col-s-12 col-4 col-m-6 col-l-4">
+					<div class="content">
+						<img src="food3.jpg" alt="food_pic">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>						
+					</div>					
+				</div>
+				<div class="parent col-s-12 col-4 col-m-6 col-l-4">
+					<div class="content">
+						<img src="food4.jpg" alt="food_pic">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>						
+					</div>					
+				</div>
+				<div class="parent col-s-12 col-4 col-m-6 col-l-4">
+					<div class="content">
+						<img src="food1.jpg" alt="food_pic">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>						
+					</div>					
+				</div>
+				<div class="parent col-s-12 col-4 col-m-6 col-l-4">
+					<div class="content">
+						<img src="food2.jpg" alt="food_pic">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>						
+					</div>					
+				</div>
+		</article>
+		<aside class="col-s-12 col-2">
+			<h1>Good to Know Info</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<ul>
+				<li>The first point</li>
+				<li>The second point</li>
+				<li>The third point</li>
+				<li>The fourth point</li>
+				<li>The fifth point</li>
+				<li>The sixth point</li>
+				<li>The seventh point</li>
+			</ul>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>			
+		</aside>
+	</section>
+	<footer class="page_footer">Images used from <a href="http://lorempixel.com/">lorempixel.com</a></footer>
+</div>
+</body>
+</html>
